@@ -1,0 +1,69 @@
+name: Unpack 7z archive
+
+on:
+  push:
+    paths:
+      - "*.7z"
+      - ".github/workflows/unpack-7z.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install 7-Zip
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y p7zip-full rsync
+
+      - name: Find archive
+        id: archive
+        run: |
+          ARCHIVE="$(find . -maxdepth 1 -type f -name '*.7z' | head -n 1)"
+          if [ -z "$ARCHIVE" ]; then
+            echo "No .7z archive found in repository root"
+            exit 1
+          fi
+          echo "archive=$ARCHIVE" >> "$GITHUB_OUTPUT"
+          echo "Using archive: $ARCHIVE"
+
+      - name: Extract archive
+        run: |
+          rm -rf _extract
+          mkdir _extract
+          7z x "${{ steps.archive.outputs.archive }}" -o_extract -y
+
+      - name: Move extracted files to repository root
+        run: |
+          shopt -s dotglob nullglob
+
+          # If archive contains one top-level directory, move its contents.
+          entries=(_extract/*)
+          if [ "${#entries[@]}" -eq 1 ] && [ -d "${entries[0]}" ]; then
+            SRC="${entries[0]}"
+          else
+            SRC="_extract"
+          fi
+
+          rsync -av "$SRC"/ ./ \
+            --exclude '.git/' \
+            --exclude '.github/workflows/unpack-7z.yml'
+
+          rm -rf _extract
+          rm -f ./*.7z
+
+      - name: Commit unpacked files
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add -A
+          git commit -m "Unpack uploaded project archive" || echo "No changes to commit"
+          git push
