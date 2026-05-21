@@ -1,0 +1,46 @@
+node_modules
+/src-tauri/target/
+target/
+src-tauri/
+
+# Env and local state
+.env.local
+.env
+.venv/
+.python-version
+
+# Builds and caches
+dist/
+backend/__pycache__/
+**/__pycache__/
+.pytest_cache/
+*.pyc
+
+# Logs and temp
+*.log
+python_logs.txt
+wynik.txt
+
+# Archives
+*.zip
+
+# Sensitive runtime data
+apps/web/src/data/tunnel.json
+apps/web/src/data/tunnel_status.json
+apps/web/src/data/tunnel_pid.json
+apps/web/src/data/accounts.json
+apps/web/src/data/sessions.json
+apps/web/src/data/active_sessions.json
+apps/web/src/data/settings.json
+apps/web/src/data/modules_settings.json
+apps/web/src/data/temp/
+apps/web/src/data/terminal_sessions/
+apps/web/src/data/devices_show_version/
+apps/web/src/data/keys/
+services/src/data/keys/
+
+# Editor
+.vscode/
+
+# SSH keys
+.ssh/

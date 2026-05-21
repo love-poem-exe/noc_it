@@ -1,0 +1,1089 @@
+[
+  {
+    "id": "5e13466d-b1ec-423d-b6a6-e40ce7494b0b",
+    "site_tag": "pl-waw10a",
+    "site_name": "HUB Daniszewska",
+    "location": "Warszawa, Daniszewska 27A (52.312351,21.022503)",
+    "site_devices": [
+      "15ab84c8-a4d5-4878-b7e5-198ec1e11f95",
+      "59193b9f-f4d2-416e-b951-f34e28943f7c"
+    ]
+  },
+  {
+    "id": "cc461ad3-2a90-40e6-a6bc-c45b58eccbf6",
+    "site_tag": "pl-gdn04a",
+    "site_name": "HUB Gdansk",
+    "location": "Gdańsk, Jana z Kolna 11 (54.360470,18.647162)",
+    "site_devices": [
+      "6a7911c9-097c-441e-a4fe-a8947f9fac76",
+      "d98fbaec-c400-44a3-97dc-ad174ca1159b",
+      "4aebb39b-5d3c-402c-9a53-33895c802d88"
+    ]
+  },
+  {
+    "id": "b5aac85f-f0c7-4297-8ea7-17af8b38176c",
+    "site_tag": "pl-bbi01a",
+    "site_name": "HUB Bielsko Biała",
+    "location": "Bielsko-Biała, Franciszka Kamińskiego 19 (49.813372,19.035416)",
+    "site_devices": [
+      "1481ffc5-8b39-4421-b13f-9f520b8a4c73",
+      "f6a2e08e-6761-4fe8-b04a-f2115040907a"
+    ]
+  },
+  {
+    "id": "9567e483-56d0-49c6-8876-0e45bd272444",
+    "site_tag": "pl-bzg01a",
+    "site_name": "HUB Bydgoszcz",
+    "location": "Bydgoszcz, Łęczycka 41 (53.125483,18.056453)",
+    "site_devices": [
+      "7d1bfb67-6a5b-47a6-a156-06e7b9fee50a",
+      "53d44ddd-6d22-4c81-8988-d079bf800b50",
+      "2146e94c-ad6f-4502-9441-414f99ca153f",
+      "f82a888f-dfd5-4c71-b41f-90df802eaceb",
+      "792563e0-c352-483f-8ae8-23cb0dc73047"
+    ]
+  },
+  {
+    "id": "baad3998-df0f-4d36-8c09-8ed1d2a91816",
+    "site_tag": "pl-bia01a",
+    "site_name": "HUB Bialystok",
+    "location": "Białystok, Henryka Sienkiewicza (53.138776,23.170584)",
+    "site_devices": []
+  },
+  {
+    "id": "3faf0389-a20a-4841-a862-278d5c333589",
+    "site_tag": "pl-bib01a",
+    "site_name": "HUB Bielko-Biala",
+    "location": "Bielsko-Biała, Powstańców Śląskich 6 (49.817959,19.044903)",
+    "site_devices": []
+  },
+  {
+    "id": "ef06f40b-1506-410d-8cd1-37f941046011",
+    "site_tag": "pl-bol01a",
+    "site_name": "HUB Boleslawiec",
+    "location": "Bolesławiec, Jana Sobieskiego 11 (51.255322,15.560918)",
+    "site_devices": [
+      "c5c32ccb-2ac6-4c97-878b-139e379de04e"
+    ]
+  },
+  {
+    "id": "28d1399f-bf42-4299-b6b9-4c7e339f797d",
+    "site_tag": "pl-brg01a",
+    "site_name": "HUB Brzeg Opolski",
+    "location": "Brzeg, Chocimska 7 (50.852881,17.458990)",
+    "site_devices": [
+      "8f77ba8a-2601-45ca-b03d-0cbf0e4161e0"
+    ]
+  },
+  {
+    "id": "e45027b7-b0ad-4175-aa2d-fe96f46bf50b",
+    "site_tag": "pl-byt01a",
+    "site_name": "HUB Bytom",
+    "location": "Bytom, Wrocławska 32 (50.348816,18.908389)",
+    "site_devices": [
+      "01e4e452-b78e-4fa8-bc1b-3d79cac173b6",
+      "2bef8617-b87f-4fc4-941b-bac44d4bccb3",
+      "07f4bebc-a91c-48ab-8f60-464473948af5"
+    ]
+  },
+  {
+    "id": "ae65c2bd-9889-4b25-8430-733f54ef3a6d",
+    "site_tag": "pl-bzd01a",
+    "site_name": "HUB Brzeg Dolny",
+    "location": "Brzeg Dolny, 1 Maja 21 (51.269427,16.712580)",
+    "site_devices": [
+      "742f86d1-d9e2-4748-8921-ff01ca66885b"
+    ]
+  },
+  {
+    "id": "75bc6c90-20f6-4a84-aacc-93a9eac1d0f2",
+    "site_tag": "pl-cie01a",
+    "site_name": "HUB Ciechanow",
+    "location": "Ciechanów, Plac Tadeusza Kościuszki 1/3 (52.875816,20.617690)",
+    "site_devices": []
+  },
+  {
+    "id": "3334a112-71d0-4106-86f6-f55b27267421",
+    "site_tag": "pl-clk02a",
+    "site_name": "HUB Chelm",
+    "location": "Chełm, Witolda Lutosławskiego 1 (51.129208,23.463308)",
+    "site_devices": [
+      "d1337701-f1ca-4194-9eb1-82c141a8bee9"
+    ]
+  },
+  {
+    "id": "ddb21bad-931b-4bec-a0ff-1a95f16aa48d",
+    "site_tag": "pl-crw01a",
+    "site_name": "HUB Chorzow",
+    "location": "Chorzów, Filarowa 3 (50.298751,18.941904)",
+    "site_devices": [
+      "9d104135-6975-4f31-8a8e-420f20b0b955"
+    ]
+  },
+  {
+    "id": "36ad1419-fddf-4c56-ade3-801405eb6adc",
+    "site_tag": "pl-czw01a",
+    "site_name": "HUB Czestochowa",
+    "location": "Częstochowa, Rondo Mickiewicza (50.802481,19.117543)",
+    "site_devices": []
+  },
+  {
+    "id": "aebf9877-32a5-475a-99a4-4f46d4b9a505",
+    "site_tag": "pl-czw02a",
+    "site_name": "HUB Czestochowa",
+    "location": "Częstochowa, Górna 6 (50.792380,19.135729)",
+    "site_devices": [
+      "18f1ce6d-b1dc-4975-8dc6-407b9d7489f4"
+    ]
+  },
+  {
+    "id": "7a39744d-8e89-4311-b2ab-0502e306153c",
+    "site_tag": "pl-dab01a",
+    "site_name": "HUB Dabrowa Gornicza",
+    "location": "Dąbrowa Górnicza, Królowej Jadwigi 23 (50.324076,19.199751)",
+    "site_devices": [
+      "cbc6ddf2-c798-4072-b378-453ec7385f76",
+      "324a91fe-60d0-40f4-b5d7-bd55ecc20778"
+    ]
+  },
+  {
+    "id": "d08fcf9c-b88d-4d71-b0c5-a2b07e962726",
+    "site_tag": "pl-dzo01a",
+    "site_name": "HUB Dzierzoniow",
+    "location": "Dzierżoniów, Osiedle Różane 9d (50.739933,16.653254)",
+    "site_devices": []
+  },
+  {
+    "id": "d18696dc-9f0e-4e4d-a35f-c60dbfafe855",
+    "site_tag": "pl-gdn01a",
+    "site_name": "HUB Gdansk",
+    "location": "Gdańsk, Jana Matejki 6 (54.375206,18.610597)",
+    "site_devices": [
+      "959b13f7-78a1-4eee-84a1-5c6a9b9f232a",
+      "62af0daf-92e0-456c-89c5-f0c1b383d5a6",
+      "aa2f62f1-91ea-4d16-8be5-291719685741"
+    ]
+  },
+  {
+    "id": "385286b6-a28d-4283-bde4-1a55c24714d5",
+    "site_tag": "pl-gdn02a",
+    "site_name": "HUB Gdansk",
+    "location": "Gdańsk, Andrzeja Struga 16 (54.346912,18.604355)",
+    "site_devices": []
+  },
+  {
+    "id": "71f3469e-75e0-4135-b21b-6f4e5e5d3202",
+    "site_tag": "pl-gdy01a",
+    "site_name": "HUB Gdynia",
+    "location": "Gdynia, Stryjska (54.491577,18.538351)",
+    "site_devices": [
+      "bba374e9-2388-40b1-b863-c8b602045f5c",
+      "b9d5ccdc-2533-4fee-8b52-71f7f1643fdd",
+      "30a82887-4054-46cf-978d-9442e64ced86"
+    ]
+  },
+  {
+    "id": "9bf04a21-b784-42a7-9fa2-120766b9b70a",
+    "site_tag": "pl-glu01a",
+    "site_name": "HUB Glucholazy",
+    "location": "Głuchołazy, Henryka Wieniawskiego 4 (50.305928,17.389042)",
+    "site_devices": [
+      "eebb5ae3-b9c2-43fa-b92b-6fbad433c279"
+    ]
+  },
+  {
+    "id": "5471f57f-f14a-4fa0-a978-27a5267b6b7d",
+    "site_tag": "pl-glw01a",
+    "site_name": "HUB Glogow",
+    "location": "Głogów, Saturna 30A (51.653118,16.070645)",
+    "site_devices": [
+      "5eb8db57-83c8-4324-9b80-5c4e93bb521b"
+    ]
+  },
+  {
+    "id": "fdf8780b-3ff2-4983-af6d-e8c979266fcb",
+    "site_tag": "pl-gnz01a",
+    "site_name": "HUB Gniezno",
+    "location": "Gniezno, Adama Mickiewicza 8 (52.533086,17.600663)",
+    "site_devices": [
+      "c44063f2-05f3-4140-a934-d0b165a34ca4"
+    ]
+  },
+  {
+    "id": "c71a4e22-0681-4b8b-8b69-cb688895a123",
+    "site_tag": "pl-gwc01a",
+    "site_name": "HUB Gliwice",
+    "location": "Gliwice, Górnych Wałów 36 (50.294156,18.662200)",
+    "site_devices": [
+      "ef37aa60-5eee-4e70-926c-310a766080e6",
+      "dd6f4b7b-0f04-41a4-931b-45537a3a2a91"
+    ]
+  },
+  {
+    "id": "b8d60efc-41f4-4314-a1ee-d11e276315ea",
+    "site_tag": "pl-ieg01a",
+    "site_name": "HUB Zielona Gora",
+    "location": "Zielona Góra, Stefana Wyszyńskiego 29 (51.931767,15.486237)",
+    "site_devices": []
+  },
+  {
+    "id": "0a18f932-ece9-4391-acc5-057bf087a449",
+    "site_tag": "pl-jaw01a",
+    "site_name": "HUB Jaworzno",
+    "location": "Jaworzno, Grunwaldzka 258 (50.219601,19.251447)",
+    "site_devices": []
+  },
+  {
+    "id": "41c489fc-d540-4449-87d3-fbccb5c1a322",
+    "site_tag": "pl-jeg01a",
+    "site_name": "HUB Jelenia Gora",
+    "location": "Jelenia Góra, Jana Sobieskiego 47 (50.903171,15.725468)",
+    "site_devices": []
+  },
+  {
+    "id": "ad75ef9e-a568-4661-a385-0de4d7ea84da",
+    "site_tag": "pl-jzb01a",
+    "site_name": "HUB Jastrzebie Zdroj",
+    "location": "Jastrzębie-Zdrój, Katowicka 24 (49.953415,18.604796)",
+    "site_devices": [
+      "ca5e96a6-05b0-437c-861f-bf2ff1103748",
+      "359b4ee8-a773-4e58-81e4-9d607e7dba27",
+      "bd999506-819e-49fb-8f7c-56fd4869c0e8",
+      "c34749cf-8770-481f-9153-5715be9dff1c"
+    ]
+  },
+  {
+    "id": "385f9439-520d-44e9-a5d1-f71fb037f728",
+    "site_tag": "pl-kal01a",
+    "site_name": "HUB Kalisz",
+    "location": "Kalisz, Podmiejska 32a (51.751859,18.060018)",
+    "site_devices": [
+      "1075707f-9b1b-4f16-9d21-0c6975659d92"
+    ]
+  },
+  {
+    "id": "c0510471-b2f8-4714-a077-cdd79d2d1d81",
+    "site_tag": "pl-kek01a",
+    "site_name": "HUB Kedzierzyn Kozle",
+    "location": "Kędzierzyn-Koźle, Władysława Łokietka 7 (50.348259,18.227786)",
+    "site_devices": []
+  },
+  {
+    "id": "81e3ef02-81b1-4c8d-909d-d2eef7b5d452",
+    "site_tag": "pl-klc01a",
+    "site_name": "HUB Kielce",
+    "location": "Kielce, Jagiellońska 74 (50.870125,20.602725)",
+    "site_devices": [
+      "99355550-13d4-403f-b616-72c41308bdfe",
+      "daaf0176-3823-4389-9666-0e533f3a1b6e"
+    ]
+  },
+  {
+    "id": "9ef8a9e3-a74f-4e68-a35a-4b7d97ac1d0b",
+    "site_tag": "pl-knu01a",
+    "site_name": "HUB Knurow",
+    "location": "Knurów, 1 Maja 51 (50.235682,18.659448)",
+    "site_devices": []
+  },
+  {
+    "id": "ca65607b-03fb-464b-9e54-7dfbbedfb752",
+    "site_tag": "pl-kol01a",
+    "site_name": "HUB Kolobrzeg",
+    "location": "Kołobrzeg, Koszalińska 49c (54.175596,15.592747)",
+    "site_devices": [
+      "0bbb9838-812d-4a3e-b57c-56d520360374"
+    ]
+  },
+  {
+    "id": "e294eb68-9419-4458-8289-7647e24a4ed5",
+    "site_tag": "pl-krk02a",
+    "site_name": "HUB Krakow",
+    "location": "Kraków, Aleja Generała Władysława Andersa (50.085614,20.013683)",
+    "site_devices": [
+      "2db852ff-973f-43a3-a67c-aaae87978647",
+      "a58f6017-2472-48ba-893a-909f2cacff53",
+      "289f1d35-1b48-4980-bb44-ac0b934630f7",
+      "601b08e5-c90c-4e8c-9645-9f1a473882ce",
+      "b7819985-d110-405d-a9eb-3b92ea8e9677"
+    ]
+  },
+  {
+    "id": "8e343ade-14c6-47ec-9370-a8025be135cd",
+    "site_tag": "pl-krk03a",
+    "site_name": "HUB Krakow",
+    "location": "Kraków, Wielicka 265 (50.012784,19.999954)",
+    "site_devices": [
+      "3fc3c40e-da36-4b18-9730-0fb4f1150690",
+      "34e90056-9710-4017-a8d6-d42bb7773f8b",
+      "a656f662-093e-4988-94a0-6c969f81290a"
+    ]
+  },
+  {
+    "id": "4bbe05ce-b0d7-495c-ac4c-1d291e1f1e0f",
+    "site_tag": "pl-krk04a",
+    "site_name": "HUB Krakow",
+    "location": "Kraków, Na Kozłówce 25 (50.018865,19.982271)",
+    "site_devices": []
+  },
+  {
+    "id": "08f47065-a078-4333-a7d5-582c38131654",
+    "site_tag": "pl-krk05a",
+    "site_name": "HUB Krakow",
+    "location": "Kraków (50.087069,20.021750)",
+    "site_devices": []
+  },
+  {
+    "id": "01627a82-bf8f-4b93-80d7-481edcf71b78",
+    "site_tag": "pl-krk06a",
+    "site_name": "HUB Krakow",
+    "location": "Kraków, Kosynierów 5 (50.066508,19.976609)",
+    "site_devices": [
+      "17df9e92-9e2d-4c57-bbea-dbfb3a1e97cb",
+      "83f89553-bdaf-4866-a689-c32e0f06b144"
+    ]
+  },
+  {
+    "id": "92fee948-a6eb-4290-a44f-e48436ee461c",
+    "site_tag": "pl-krk07a",
+    "site_name": "HUB Krakow",
+    "location": "Kraków, Królewska (50.073167,19.917387)",
+    "site_devices": [
+      "ced0fab0-a0cf-4f48-83fa-692598861452",
+      "38859682-0c2d-4ff6-bff3-e2e570daef69"
+    ]
+  },
+  {
+    "id": "1c597046-5f10-47f0-b607-cb9ef94a0b5f",
+    "site_tag": "pl-krk08a",
+    "site_name": "HUB Krakow",
+    "location": "Kraków, Michała Badeniego (50.080619,20.129332)",
+    "site_devices": []
+  },
+  {
+    "id": "154dfc32-87d7-4c2d-aea7-a67730188936",
+    "site_tag": "pl-krk09a",
+    "site_name": "HUB Krakow",
+    "location": "Kraków, Pychowicka 7 (50.032697,19.919276)",
+    "site_devices": [
+      "3fc68878-344a-4ff6-a74e-d53e8d88d3ef",
+      "a30e35a4-02c6-4ee1-b132-01d7b4dd4bfd"
+    ]
+  },
+  {
+    "id": "07ecf0a3-6dca-4b71-9b19-510cb77313b1",
+    "site_tag": "pl-krp01a",
+    "site_name": "HUB Karpacz",
+    "location": "Karpacz, Nad Łomnicą 16 (50.777754,15.756454)",
+    "site_devices": []
+  },
+  {
+    "id": "a3e7645f-bbbd-49c9-a417-0e1fd5c38c50",
+    "site_tag": "pl-krs01a",
+    "site_name": "HUB Krasnik",
+    "location": "Kraśnik, Juliusza Słowackiego 3 (50.961227,22.164365)",
+    "site_devices": []
+  },
+  {
+    "id": "984346fe-91b0-40eb-9e7a-74d4e3f79299",
+    "site_tag": "pl-ktw01a",
+    "site_name": "HUB Katowice",
+    "location": "Katowice, Murckowska 14c (50.255343,19.046597)",
+    "site_devices": [
+      "ef188b6e-7fce-475a-927b-0fa9f9265d00",
+      "fe75f916-7c9f-40cc-a63d-34f55f63a4ca"
+    ]
+  },
+  {
+    "id": "766efe74-906c-4577-9c70-18a60b9c1e75",
+    "site_tag": "pl-ktw02a",
+    "site_name": "HUB Katowice",
+    "location": "Katowice, Głuszców 9 (50.201406,18.979070)",
+    "site_devices": [
+      "8e035615-01a4-4e8a-89ed-c4d1262feea8"
+    ]
+  },
+  {
+    "id": "372c900e-aeea-41e0-b4dd-835e2ed4c009",
+    "site_tag": "pl-ktw03a",
+    "site_name": "HUB Katowice",
+    "location": "Katowice, Księdza biskupa Stanisława Adamskiego 7 (50.253559,19.002942)",
+    "site_devices": []
+  },
+  {
+    "id": "dbf00c07-1d51-4d26-adfb-a72b8c410e47",
+    "site_tag": "pl-ktw04a",
+    "site_name": "HUB Katowice",
+    "location": "Katowice, Zabrska 17 (50.263484,19.012318)",
+    "site_devices": []
+  },
+  {
+    "id": "1437d19c-afa8-4695-aa9f-0d9c41ac284d",
+    "site_tag": "pl-kzc01a",
+    "site_name": "HUB Krzeszowice",
+    "location": "Krzeszowice, Kazimierza Wyki (50.135263,19.634408)",
+    "site_devices": []
+  },
+  {
+    "id": "d5dcf6fb-46ad-442f-b25a-ddf4e35536db",
+    "site_tag": "pl-leg01a",
+    "site_name": "HUB Legnica",
+    "location": "Legnica, Tatrzańska 15 (51.197201,16.205488)",
+    "site_devices": []
+  },
+  {
+    "id": "95416b43-b3a3-45d4-b986-99fbea2496f2",
+    "site_tag": "pl-lez01a",
+    "site_name": "HUB Leszno",
+    "location": "Leszno, Osiedle Józefa Sułkowskiego 48 (51.839067,16.592091)",
+    "site_devices": [
+      "34c759e8-53cf-4d42-9424-c20bd4f4e11b"
+    ]
+  },
+  {
+    "id": "eb5404ec-efa5-4f73-9d6c-985bcefd5195",
+    "site_tag": "pl-lkw01a",
+    "site_name": "HUB Lukow",
+    "location": "Łuków (51.923726,22.383742)",
+    "site_devices": [
+      "d4628fdb-7645-4f38-bc3c-f9aeba61e8bf"
+    ]
+  },
+  {
+    "id": "5350548e-dd8e-4b25-b63f-7c024e8d0362",
+    "site_tag": "pl-lod01a",
+    "site_name": "HUB Lodz",
+    "location": "Łódź, Juliusza Jurczyńskiego 18 (51.759302,19.549312)",
+    "site_devices": []
+  },
+  {
+    "id": "6fa8a5b0-7a3c-4058-8670-d4a2dcc6124a",
+    "site_tag": "pl-lod02a",
+    "site_name": "HUB Lodz",
+    "location": "Łódź, Piotrkowska 148/150 (51.760337,19.459459)",
+    "site_devices": []
+  },
+  {
+    "id": "36d46fec-ab27-4728-bd72-89d275721ebe",
+    "site_tag": "pl-lul01a",
+    "site_name": "HUB Lublin",
+    "location": "Lublin, ul. Zana 43",
+    "site_devices": [
+      "fadcd8af-d7b9-4354-b383-3d5a0e82e55e"
+    ]
+  },
+  {
+    "id": "f1fa939d-a84f-4db0-bd5e-3315edcd7aef",
+    "site_tag": "pl-lul02a",
+    "site_name": "HUB Lublin",
+    "location": "Lublin, Młodej Polski 18 (51.264039,22.555086)",
+    "site_devices": []
+  },
+  {
+    "id": "25cead03-dd1d-46c1-8073-c0306fdf3702",
+    "site_tag": "pl-lun01a",
+    "site_name": "HUB Lubin",
+    "location": "Lubin, ul. Leszczynowa 1",
+    "site_devices": [
+      "0ec435f5-7ffd-4c06-b8e6-d4a0822d8baf"
+    ]
+  },
+  {
+    "id": "ea6b7068-6adb-4870-8cb2-cdc81de47860",
+    "site_tag": "pl-min01a",
+    "site_name": "HUB Minsk Mazowiecki",
+    "location": "Mińsk Mazowiecki, Nadrzeczna (52.179077,21.570244)",
+    "site_devices": [
+      "2d2056bb-c423-4048-b302-39f091ff2a02"
+    ]
+  },
+  {
+    "id": "67100730-a4e9-4ca1-bc4b-cb01cf4b59fb",
+    "site_tag": "pl-mlc01a",
+    "site_name": "HUB Mielec",
+    "location": "Mielec, ul.Dworcowa 6",
+    "site_devices": [
+      "e822e8f3-1119-431d-9419-4535cfbfaab1"
+    ]
+  },
+  {
+    "id": "c84725ba-bfb9-43ad-afca-31f497243b05",
+    "site_tag": "pl-mpa01a",
+    "site_name": "HUB Miedzyrzec Podlaski",
+    "location": "Miedzyrzec Podlaski, ul.",
+    "site_devices": []
+  },
+  {
+    "id": "76c7da66-a23a-4b7b-ab89-0f6d72e6244c",
+    "site_tag": "pl-myl01a",
+    "site_name": "HUB Myslowice",
+    "location": "Myslowice, ul. Wojska Polskiego 1",
+    "site_devices": []
+  },
+  {
+    "id": "e5a76c5b-ccdf-41e3-884a-304d328a2d70",
+    "site_tag": "pl-nos01a",
+    "site_name": "HUB Nowa Sol",
+    "location": "Nowa Sól, Tadeusza Kościuszki 1a (51.802659,15.711023)",
+    "site_devices": []
+  },
+  {
+    "id": "751b2e47-f937-4451-913b-36a37139c17a",
+    "site_tag": "pl-nws01a",
+    "site_name": "HUB Nowy Sacz",
+    "location": "Nowy Sacz, ul.Barska 2",
+    "site_devices": []
+  },
+  {
+    "id": "f0978df9-3f01-4691-9713-5e06791135bb",
+    "site_tag": "pl-nys01a",
+    "site_name": "HUB Nysa",
+    "location": "Nysa, ul.Prudnicka 3",
+    "site_devices": [
+      "5a8d24e7-7f63-4454-8898-b2cda61f2c8d"
+    ]
+  },
+  {
+    "id": "a0148757-2bcb-41f3-a389-a3e9573050ce",
+    "site_tag": "pl-ols01a",
+    "site_name": "HUB Olsztyn",
+    "location": "Olsztyn, Rotmistrza Witolda Pileckiego 8 (53.743775,20.485787)",
+    "site_devices": []
+  },
+  {
+    "id": "e56e1133-372c-4496-8ff7-4b53d2e7d957",
+    "site_tag": "pl-opo01a",
+    "site_name": "HUB Opole",
+    "location": "Opole, ul. Chabrow 117",
+    "site_devices": [
+      "901fb984-0ff0-449f-85df-2fd5ca479448"
+    ]
+  },
+  {
+    "id": "8440855f-654e-430f-b014-8278a439009c",
+    "site_tag": "pl-osw01a",
+    "site_name": "HUB Oswiecim",
+    "location": "Oswiecim, ul. Zaborska 2a",
+    "site_devices": []
+  },
+  {
+    "id": "de6cc44d-2dc6-46d7-a776-2332d9cf14bb",
+    "site_tag": "pl-otw01a",
+    "site_name": "HUB Otwock",
+    "location": "Otwock, ul. Matejki 9",
+    "site_devices": []
+  },
+  {
+    "id": "b1a9f4d4-bb90-4011-b387-25123a81e225",
+    "site_tag": "pl-oyx01a",
+    "site_name": "HUB Siemianowice Slaskie",
+    "location": "Siemianowice Slaskie, ul.",
+    "site_devices": []
+  },
+  {
+    "id": "d3d0c563-9862-40fa-aac2-683c9b65ff45",
+    "site_tag": "pl-pai01a",
+    "site_name": "HUB Pabianice",
+    "location": "Pabianice, ul.Nawrockiego 30",
+    "site_devices": [
+      "966b4900-7896-45af-bddc-80ca7bcfc582"
+    ]
+  },
+  {
+    "id": "bfe4f646-7c30-4e30-9719-56a68fe69b69",
+    "site_tag": "pl-pia01a",
+    "site_name": "HUB Piaseczno",
+    "location": "Piaseczno, ul.Pulawska 45a",
+    "site_devices": []
+  },
+  {
+    "id": "842bec75-09b1-4bee-bf74-95970e6ba8fe",
+    "site_tag": "pl-pit02a",
+    "site_name": "HUB Piotrkow Trybunalski",
+    "location": "Piotrkow Trybunalski, ul. Paderewskiego 6",
+    "site_devices": [
+      "2af3bb66-7d8d-4d37-a32f-5570daf4a869"
+    ]
+  },
+  {
+    "id": "82e56dd7-d61a-4eef-86c5-d9a346c014fe",
+    "site_tag": "pl-plo01a",
+    "site_name": "HUB Plock",
+    "location": "Plock, ul. Tysiaclecia 10",
+    "site_devices": []
+  },
+  {
+    "id": "8d57d407-d21a-4483-b05f-4da7a670fe75",
+    "site_tag": "pl-poz02a",
+    "site_name": "HUB Poznan",
+    "location": "Poznan, ul. A. Polwiejska 42E",
+    "site_devices": []
+  },
+  {
+    "id": "31364d6b-91a2-4ccb-8905-17ac943de32d",
+    "site_tag": "pl-put01a",
+    "site_name": "HUB Pultusk",
+    "location": "Pultusk, ul. Traugutta 21",
+    "site_devices": [
+      "ebf3cb66-e5a3-41b2-88f3-28e59b7e3b6d"
+    ]
+  },
+  {
+    "id": "d3fb9a43-d398-46cc-b8f5-77c4b5f45fce",
+    "site_tag": "pl-pzk01a",
+    "site_name": "HUB Pruszkow",
+    "location": "Pruszkow, ul. Staszica 1",
+    "site_devices": [
+      "5eb0bfc8-1e91-4b68-87c8-ff2ea1aedbc0"
+    ]
+  },
+  {
+    "id": "b0b3c151-3b5c-451b-81c5-7f3c7519e049",
+    "site_tag": "pl-qaz02a",
+    "site_name": "HUB Zakopane",
+    "location": "Zakopane, ul. Krupowki 41d",
+    "site_devices": []
+  },
+  {
+    "id": "501f3b66-9e42-4083-a5d4-9372ed75d9b6",
+    "site_tag": "pl-rdm01a",
+    "site_name": "HUB Radom",
+    "location": "Radom, ul. Gagarina 4",
+    "site_devices": []
+  },
+  {
+    "id": "c93dd26c-fbc4-4b14-b1ad-86178de52056",
+    "site_tag": "pl-rdm02a",
+    "site_name": "HUB Radom",
+    "location": "Radom, ul. Chrobrego 36",
+    "site_devices": [
+      "09b30133-cc28-4a2d-8706-4e962f394dee"
+    ]
+  },
+  {
+    "id": "a5ff4b07-b73f-473f-a57f-991b5bf56945",
+    "site_tag": "pl-rds01a",
+    "site_name": "HUB Ruda Slaska",
+    "location": "Ruda Slaska, ul. Ignacego Paderewskiego 5",
+    "site_devices": [
+      "0e2844db-d097-4a46-9141-6490432f8cf9"
+    ]
+  },
+  {
+    "id": "ade761db-91c6-408b-8f06-e7f6c201f95a",
+    "site_tag": "pl-rui01a",
+    "site_name": "HUB Rumia",
+    "location": "Rumia, ul. Sobieskiego 93",
+    "site_devices": [
+      "708c4092-8141-4e88-8059-44b2a24abdad"
+    ]
+  },
+  {
+    "id": "b2d4bb21-6cea-45e3-bf22-832321bcaeb3",
+    "site_tag": "pl-rze01a",
+    "site_name": "HUB Rzeszow",
+    "location": "Rzeszow, pl. Dworcowy 1",
+    "site_devices": [
+      "97036edf-cd39-4663-8a2e-b48010bf460f"
+    ]
+  },
+  {
+    "id": "39dfb04d-967c-4441-b026-d54cff32aac8",
+    "site_tag": "pl-sdk01a",
+    "site_name": "HUB Swidnik",
+    "location": "Swidnik, ul.Raclawicka 38/40",
+    "site_devices": []
+  },
+  {
+    "id": "3472ae78-aba5-4e45-8504-6db97ffd44ad",
+    "site_tag": "pl-ska01a",
+    "site_name": "HUB Skawina",
+    "location": "Skawina, ul. Ogrody 29",
+    "site_devices": []
+  },
+  {
+    "id": "008303d2-6546-46d0-83b9-3c3a7267f5cd",
+    "site_tag": "pl-ska02a",
+    "site_name": "HUB Skawina",
+    "location": "Skawina, ul. Krakowska 43",
+    "site_devices": []
+  },
+  {
+    "id": "3fc62179-44aa-4c2e-82f6-05c68e9fefb6",
+    "site_tag": "pl-stg01a",
+    "site_name": "HUB Starogard Gdanski",
+    "location": "Starogard Gdanski, ul. Pomorska 9",
+    "site_devices": [
+      "10c74073-798e-4483-b0b1-14936c13cda3"
+    ]
+  },
+  {
+    "id": "3050ce4a-ab44-4993-95a4-e93797daa594",
+    "site_tag": "pl-swc01a",
+    "site_name": "HUB Sosnowiec",
+    "location": "Sosnowiec, Al. Jozefa Mireckiego 22c",
+    "site_devices": [
+      "251a1ced-c036-4caa-a8e0-e57914006f00",
+      "060339ae-cfb8-43c6-a1f2-6e88b3649306"
+    ]
+  },
+  {
+    "id": "e9a4505c-82de-4d77-a7f1-fcb62ef33633",
+    "site_tag": "pl-szz01a",
+    "site_name": "HUB Szczecin",
+    "location": "Szczecin, ul. Lednicka 6",
+    "site_devices": [
+      "0225c8dd-1e07-4314-9df9-78735f6560cb",
+      "5bc2a6b8-967b-4949-b08c-dd8934491dcf",
+      "3de4e53b-54d3-47ec-adea-7deef30a63df",
+      "807ab884-ed43-461f-a7f4-c86a9cc9c2f9",
+      "41ddd664-e95b-425a-be84-441e91f79dff",
+      "70135eda-5080-4493-8705-71c7e64854af"
+    ]
+  },
+  {
+    "id": "de8e6add-4ea4-4854-afd0-a0914ae1d495",
+    "site_tag": "pl-szz02a",
+    "site_name": "HUB Szczecin",
+    "location": "Szczecin, ul. Lubinowa 75",
+    "site_devices": [
+      "bebeb7b5-8acb-4fff-b7bf-55fbdf261011"
+    ]
+  },
+  {
+    "id": "52e33e4a-a8ba-429d-9feb-96f7eddb74a6",
+    "site_tag": "pl-tar01a",
+    "site_name": "HUB Tarnow",
+    "location": "Tarnow, ul. Bitwy o Wal Pomorski 1",
+    "site_devices": []
+  },
+  {
+    "id": "ccecc547-20ed-4ec9-ba91-f5d201c953d9",
+    "site_tag": "pl-tgo01a",
+    "site_name": "HUB Tarnowskie Gory",
+    "location": "Tarnowskie Gory, ul.Jana III Sobieskiego 23",
+    "site_devices": []
+  },
+  {
+    "id": "ec37293a-b7da-4bbe-b447-e49b4496277a",
+    "site_tag": "pl-tri01a",
+    "site_name": "HUB Trzebnica",
+    "location": "Trzebnica, ul. Sloneczna 5",
+    "site_devices": []
+  },
+  {
+    "id": "f08d5827-0840-4b13-9e94-d52ecd17e793",
+    "site_tag": "pl-tyy01a",
+    "site_name": "HUB Tychy",
+    "location": "Tychy, ul.Darwina 25",
+    "site_devices": [
+      "25cfd0ca-332f-4981-8929-db28b8d34af6",
+      "1a5eb660-5613-46e0-897d-876306ddb2cf"
+    ]
+  },
+  {
+    "id": "4e771772-3316-4691-9fec-3ee2f8277e0e",
+    "site_tag": "pl-waw01a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, Al. Solidarnosci 171",
+    "site_devices": []
+  },
+  {
+    "id": "580db42c-753b-44ad-b351-5390f82b4021",
+    "site_tag": "pl-waw01b",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, Wynalazek 1",
+    "site_devices": []
+  },
+  {
+    "id": "5a74a1cc-0f90-4ad7-97c1-3be59304118f",
+    "site_tag": "pl-waw02a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Nowogrodzka 64a, LINX",
+    "site_devices": [
+      "7cdf379f-6842-49c6-85cc-becc5968e56e"
+    ]
+  },
+  {
+    "id": "57640b1c-40f6-4bed-b082-724d705ff9da",
+    "site_tag": "pl-waw03a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Cynamonowa 2",
+    "site_devices": [
+      "fcbd89d8-910c-4027-bdac-aee5b8231c73",
+      "7c49b0fb-0640-43da-a42b-695640f7a185"
+    ]
+  },
+  {
+    "id": "d9e92295-416f-41eb-a623-ac0c161828ad",
+    "site_tag": "pl-waw04a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Szturmowa 2A",
+    "site_devices": []
+  },
+  {
+    "id": "5acd0466-e47e-4884-9f79-08f8a5c6db6c",
+    "site_tag": "pl-waw05a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Staniewicka 18",
+    "site_devices": [
+      "d7b4b791-9836-457e-a635-3b5ac30d4001",
+      "8826736b-026e-4bcf-ab78-9bf1fc32d1f6"
+    ]
+  },
+  {
+    "id": "32dbf2fd-de6e-4aa8-9620-ead295c5895e",
+    "site_tag": "pl-waw06a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Woloska 16",
+    "site_devices": [
+      "a9fe2eda-50fd-4520-849a-47b479324c1f",
+      "7eb19fbe-6998-455a-ba95-658796907dcb",
+      "210bcc94-c923-4b00-b2de-75206e007bf9"
+    ]
+  },
+  {
+    "id": "a922029d-ce06-4d89-bfab-0c2b23e96cce",
+    "site_tag": "pl-waw07a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Powstancow Slaskich 80c",
+    "site_devices": [
+      "e173a64f-aca7-4726-9454-ec9b828e5bdb",
+      "bb589f27-8400-4b38-a3ef-2e9cb97564c0"
+    ]
+  },
+  {
+    "id": "38b01980-db6b-4885-afca-4783d79eac78",
+    "site_tag": "pl-waw08a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Wysockiego 26/7",
+    "site_devices": [
+      "5b72978a-cfa3-4d2d-80c9-38be7ef57f40",
+      "bdd3e027-5528-4f77-a2d8-5d740692b3d5",
+      "654c9316-882d-4969-935d-9144e89f6256"
+    ]
+  },
+  {
+    "id": "d4f674b2-0528-455e-85b3-5219216fc1ae",
+    "site_tag": "pl-waw09a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, Equinix WA1 WAW",
+    "site_devices": []
+  },
+  {
+    "id": "eeb1adcf-5408-4ad8-8f54-7e8fff1ca357",
+    "site_tag": "pl-waw09d",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, al. Jerozlimskie 65/67 LIM",
+    "site_devices": []
+  },
+  {
+    "id": "3fa5eafb-5831-4bdb-8b60-29882aabe291",
+    "site_tag": "pl-waw11a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Abrahama 18",
+    "site_devices": [
+      "efd712a0-d5d1-475b-88a9-19a0b2b9e112",
+      "7b86f7eb-6ca9-4ed3-bed7-ad264ea60f13"
+    ]
+  },
+  {
+    "id": "bb9a2de4-0333-453f-894b-1c6a2429bdd2",
+    "site_tag": "pl-waw12a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Woloska 7",
+    "site_devices": []
+  },
+  {
+    "id": "caef2c67-eef5-4e95-be0f-70b03a15bca4",
+    "site_tag": "pl-waw14a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Ksiazkowa 9a,Tarchomin",
+    "site_devices": [
+      "ced7b85f-b8d9-4911-b355-b08134e33cd5"
+    ]
+  },
+  {
+    "id": "065a61e5-2f11-48c1-b6f2-87d6699a7013",
+    "site_tag": "pl-waw15a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul.Rozbrat 8",
+    "site_devices": [
+      "1d4c493f-0adb-42ce-8f09-3af6aaf4fce1",
+      "ba6bb9b6-6673-467d-be6e-ce56327f039e"
+    ]
+  },
+  {
+    "id": "7b4cee83-80c6-413d-8666-f978e3094b60",
+    "site_tag": "pl-waw16a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul.Mianowskiego 15",
+    "site_devices": [
+      "c5fbe309-241b-4c02-b7e8-57637307e005",
+      "7e326a73-e7ad-4fcc-8dcb-3ea576d64e87"
+    ]
+  },
+  {
+    "id": "6e26e2ff-3791-4770-8034-281bbfccd7c3",
+    "site_tag": "pl-waw17a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Jana Pawla II 78",
+    "site_devices": [
+      "dbbb5e93-953f-45ca-b248-50c41207be0b"
+    ]
+  },
+  {
+    "id": "eb5bee29-16d7-4749-9087-a54beb4025b6",
+    "site_tag": "pl-waw18a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Andersena 4",
+    "site_devices": [
+      "a1469040-ba17-4030-9913-b1e517585345",
+      "7a30be8d-766b-455e-b32b-4e0b4448f491"
+    ]
+  },
+  {
+    "id": "67b4f5db-3d0f-464f-a3ce-dd9375c56096",
+    "site_tag": "pl-waw19a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Wroclawska 2a",
+    "site_devices": [
+      "6a1e63e1-31a1-46b5-b5e9-d5dd08e2968d"
+    ]
+  },
+  {
+    "id": "ca6ce884-c35c-45b7-8198-1fdd0ded83c0",
+    "site_tag": "pl-waw20a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, Al. Komisji Edukacji Narodowej 19,Moczydlo",
+    "site_devices": [
+      "dac5c8a1-2bf5-467f-8e79-8310fc6a05d2",
+      "18d951fc-3f23-4c9c-bfc9-e4efd505727d"
+    ]
+  },
+  {
+    "id": "78e242f4-afd9-4d99-bcc4-70b23dbc0957",
+    "site_tag": "pl-waw21a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Skarbka z Gor 57",
+    "site_devices": [
+      "37b86580-3e6d-41ff-85de-a85ad97e7e8b"
+    ]
+  },
+  {
+    "id": "a2c42a3d-c146-4191-a6b1-74c0d346fdb4",
+    "site_tag": "pl-waw23a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, ul. Jutrzenki 111",
+    "site_devices": [
+      "b9a65a35-a940-46ae-9e9f-23238463a004"
+    ]
+  },
+  {
+    "id": "54da2d76-2485-42fd-a966-d50c663c536f",
+    "site_tag": "pl-waw26b",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, Konstruktorska 12 (52.185354,20.987637)",
+    "site_devices": []
+  },
+  {
+    "id": "f225c297-24d6-4972-a096-9c8468fd82e9",
+    "site_tag": "pl-waw26c",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, Konstruktorska 5 (52.185312,20.998663)",
+    "site_devices": []
+  },
+  {
+    "id": "9ab69b93-a5fa-4665-8c70-017d036f7986",
+    "site_tag": "pl-waw28a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, Powsińska 34 (52.185505,21.065745)",
+    "site_devices": [
+      "d8e401e5-208b-4052-8bd2-146348ebd12d",
+      "160221a1-2375-4391-a875-a2fe42f7dbcf"
+    ]
+  },
+  {
+    "id": "744cb1b5-9995-47fd-acd5-962ec16c1a91",
+    "site_tag": "pl-waw33a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, Braci Załuskich 7 (52.269470,20.967489)",
+    "site_devices": [
+      "4cb112b5-aa3d-4112-b589-90dd323bb297",
+      "9192a7af-6105-40e5-9f16-e5594df58dc6"
+    ]
+  },
+  {
+    "id": "06b47b2c-ae25-48c0-b1f1-8c0c487bcf2e",
+    "site_tag": "pl-waw34a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, Płowiecka 5A (52.235160,21.125818)",
+    "site_devices": [
+      "a8c0b826-3632-4f01-b980-43ab0bda9e87",
+      "d8395976-89e5-4cfe-b812-a75f0d528404"
+    ]
+  },
+  {
+    "id": "3fa85990-488e-4b97-a0ff-7069046f3602",
+    "site_tag": "pl-waw35a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, Aleje Jerozolimskie (52.206056,20.940840)",
+    "site_devices": []
+  },
+  {
+    "id": "725e78d2-0f1c-4e49-b8cd-fd89f9af6df1",
+    "site_tag": "pl-waw36a",
+    "site_name": "HUB Warszawa",
+    "location": "Warszawa, Poleczki 23 (52.154674,21.002893)",
+    "site_devices": []
+  },
+  {
+    "id": "6aeeac5c-9f78-4fcd-a7a3-330020696ffd",
+    "site_tag": "pl-wro02a",
+    "site_name": "HUB Wroclaw",
+    "location": "Wrocław, Rybacka 9 (51.113423,17.018367)",
+    "site_devices": [
+      "f96da6d2-dfce-42db-bd2c-c5643279ac90",
+      "d3fe74a9-aa98-4620-bc70-a5e37029f846"
+    ]
+  },
+  {
+    "id": "2c7612c6-e724-41e0-8efb-9809cfc098da",
+    "site_tag": "pl-wro04a",
+    "site_name": "HUB Wroclaw",
+    "location": "Wroclaw, ul.Ostrowskiego 7",
+    "site_devices": [
+      "69746e1e-466f-4789-90d9-0606e278d466",
+      "e27c9cf0-92e9-4dc9-aad8-5160c9a7445e"
+    ]
+  },
+  {
+    "id": "47801ab1-b4ab-4b2c-9318-9fcaa487cc53",
+    "site_tag": "pl-wsn01a",
+    "site_name": "HUB Wrzesnia",
+    "location": "Wrzesnia, ul.Kilinskiego 10",
+    "site_devices": [
+      "da30cca3-0ebe-4419-9f15-87e9b6564bf3"
+    ]
+  },
+  {
+    "id": "c358e208-dfdb-49f6-9dc3-f323eaef271e",
+    "site_tag": "pl-wzh01a",
+    "site_name": "HUB Walbrzych",
+    "location": "Walbrzych, ul.Glowna 9",
+    "site_devices": [
+      "1d71d97d-f0a5-42db-ad24-f7ac7f0101ef",
+      "172a12f8-44ab-4a3f-8ba2-63a20e69e40f"
+    ]
+  },
+  {
+    "id": "de192847-189d-4a72-be87-b83ba43f2ee9",
+    "site_tag": "pl-zab01a",
+    "site_name": "HUB Zabrze",
+    "location": "Zabrze, ul. Wolnosci 330",
+    "site_devices": [
+      "b462c645-7f03-4c01-9808-33583ac27d6b",
+      "2ff7b9ca-8bcf-4b4c-b872-3b2e27b3f371",
+      "60f610b6-7c0a-44b6-b3ee-fa4f29fd96de"
+    ]
+  }
+]

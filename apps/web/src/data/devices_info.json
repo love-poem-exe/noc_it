@@ -1,0 +1,55 @@
+{
+  "vendor": {
+    "Cisco": "cisco ios, cisco, catalyst, nx-os, ios xe",
+    "Juniper": "junos, juniper",
+    "Huawei": "huawei, ma5600",
+    "ZTE": "zte, zxa10",
+    "Casa": "casa",
+    "Nokia": "olt, Nokia"
+  },
+  "model": {
+    "CBR-8": "cbr8, cbr-8",
+    "MX960": "mx960",
+    "MX480": "mx480",
+    "EX4300": "ex4300",
+    "EX2200": "ex2200",
+    "ISR4451": "isr4451",
+    "ASR1001": "asr1001",
+    "N9K-C93180": "n9k-c93180, n9k",
+    "ME3600X": "me3600x",
+    "Ma5608": "ma5608, ma5600",
+    "ZXA10-C320": "zxa10-c320, zxa10",
+    "ASR9K": "asr9k",
+    "PTX5000": "ptx5000, ptx",
+    "MX10004": "mx10004",
+    "MX10008": "mx10008"
+  },
+  "software": {
+    "IOS": "ios",
+    "IOS XE": "ios xe",
+    "Junos OS": "junos",
+    "NX-OS": "nx-os",
+    "VRP": "vrp",
+    "IOS XR": "ios xr"
+  },
+  "type": {
+    "CMTS": "cbr, cable, casa",
+    "OLT": "olt, optical, ma5600, zxa10",
+    "Router": "router, routing, isr, asr, mx480, mx960, mx, me, ptx",
+    "Switch": "switch, ethernet switching, ex, n9k, catalyst"
+  },
+  "hostname": {
+    "RP/0/RSP0/CPU0:": "RP/\\d+/RSP\\d+/CPU\\d+:(\\S+?)#",
+    "System uptime is": "^(?!System\\b|Router\\b|Switch\\b)([\\w][\\w.-]+)\\s+uptime\\s+is",
+    "hostname:": "hostname:\\s*(\\S+)",
+    "JUNOS": "Hostname:\\s*(\\S+)",
+    "prompt": "^([\\w-]+)#",
+    "uptime": "([\\w][\\w.-]+)\\s+uptime\\s+is",
+    "CBR": "\\nHostname\\s+:\\s+(\\S+)"
+  },
+  "address": {
+    "Loopback0": "Loopback0\\s+([\\d.]+)\\s+",
+    "loopback": "loopback\\s+([\\d.]+)",
+    "Management": "Management\\s+([\\d.]+)\\s+"
+  }
+}

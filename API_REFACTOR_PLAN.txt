@@ -1,0 +1,84 @@
+API REFACTOR PLAN — Redukcja zbędnych endpointów
+=================================================
+
+PROBLEM
+-------
+Prawie każdy endpoint w routes.py to cienki wrapper na run_script():
+  result = run_script("controller", "metoda", payload)
+  return result.get("result") or fallback
+
+Taki sam efekt daje istniejący uniwersalny endpoint:
+  POST /scripts/run  { script: "...", method: "...", payload: {...} }
+
+17 z 30 endpointów nie wnosi żadnej logiki biznesowej — to duplikaty /scripts/run.
+
+
+ENDPOINTY DO ZACHOWANIA (mają realną wartość)
+---------------------------------------------
+1. POST /scripts/run          — core dispatcher
+2. POST /scripts/async         — Celery async path
+3. GET  /jobs/{job_id}         — sprawdzanie statusu zadań Celery
+4. POST /tunnel/key            — file upload (UploadFile), nie da się przez /scripts/run
+5. GET  /tunnel/logs           — czyta plik bezpośrednio, nie przez script_runner
+6. POST /devices/add-and-sync  — orkiestruje: add → find → sync (3 wywołania run_script)
+7. POST /devices/add-batch-and-sync — orkiestracja w pętli + deduplikacja
+8. GET  /devices/command       — pre-fetch urządzenia + run_script (2 kroki)
+9. POST /consoles/sessions     — przechodzi specjalną ścieżkę _run_consoles_controller (asyncio)
+10. POST /consoles/sessions/command — j.w.
+11. POST /consoles/sessions/close   — j.w.
+12. POST /consoles/execute          — j.w.
+
+
+ENDPOINTY DO USUNIĘCIA (proste wrappery)
+-----------------------------------------
+Frontend wywołuje je — trzeba zmienić na POST /scripts/run z odpowiednim body.
+
+Endpoint                    →  scripts/run equivalent
+─────────────────────────────────────────────────────────────────────
+GET  /tunnel/status         →  { script: "settings-tunnel_controller",  method: "get_status_fast",     payload: {} }
+GET  /tunnel                →  { script: "settings-tunnel_controller",  method: "get_tunnel",          payload: {} }
+PUT  /tunnel                →  { script: "settings-tunnel_controller",  method: "save_tunnel",         payload: {...} }
+POST /tunnel/toggle         →  { script: "settings-tunnel_controller",  method: "toggle_tunnel",       payload: {} }
+POST /tunnel/close          →  { script: "settings-tunnel_controller",  method: "close_tunnel",        payload: {} }
+GET  /devices               →  { script: "settings-devices_controller", method: "get_all_devices",     payload: {} }
+GET  /devices/info          →  { script: "settings-devices_controller", method: "get_devices_info",    payload: {} }
+POST /devices               →  { script: "settings-devices_controller", method: "add_device",          payload: {...} }
+DELETE /devices/{id}        →  { script: "settings-devices_controller", method: "delete_device",       payload: { id } }
+POST /devices/cleanup       →  { script: "settings-devices_controller", method: "deleteAllWithError/Unsync", payload: {} }
+POST /devices/{id}/sync     →  { script: "settings-devices_controller", method: "sync_device",         payload: { id } }
+GET  /connections            →  przenieść do run_script (teraz czyta plik bezpośrednio — niespójne)
+POST /connections/sync       →  { script: "settings-devices_controller", method: "sync_connections",   payload: {} }
+GET  /accounts              →  { script: "settings-accounts_controller", method: "get_all_accounts",   payload: {} }
+POST /accounts              →  { script: "settings-accounts_controller", method: "add_account",        payload: {...} }
+DELETE /accounts/{id}       →  { script: "settings-accounts_controller", method: "delete_account",     payload: { id } }
+POST /accounts/reorder      →  { script: "settings-accounts_controller", method: "save_all_accounts",  payload: [...] }
+GET  /sites                 →  { script: "settings-sites_controller",   method: "get_all_sites",       payload: {} }
+POST /sites                 →  { script: "settings-sites_controller",   method: "add_site",            payload: {...} }
+PUT  /sites/{id}            →  { script: "settings-sites_controller",   method: "update_site",         payload: { id, ... } }
+DELETE /sites/{id}          →  { script: "settings-sites_controller",   method: "delete_site",         payload: { id } }
+POST /sites/reorder         →  { script: "settings-sites_controller",   method: "save_all_sites",      payload: [...] }
+GET  /modules/settings      →  { script: "settings-modules_controller", method: "load_app_settings",   payload: {} }
+PUT  /modules/settings      →  { script: "settings-modules_controller", method: "save_app_settings",   payload: {...} }
+POST /system/cleanup        →  { script: "application_controller",      method: "cleanup_temp_folder",  payload: {} }
+
+
+PLAN MIGRACJI (frontend)
+------------------------
+1. W DataService.ts zastąpić dedykowane wywołania requestJson('/api/devices', ...)
+   na runScript('settings-devices_controller', 'get_all_devices', {})
+   — metoda runScript() już istnieje i wywołuje POST /scripts/run.
+
+2. Analogicznie dla accounts, sites, tunnel, modules, connections, system/cleanup.
+
+3. Usunąć wrappery z routes.py.
+
+4. GET /connections wymaga dodatkowej pracy — teraz czyta plik bezpośrednio,
+   trzeba dodać metodę w devices_controller (np. get_all_connections) albo
+   stworzyć connections_controller.
+
+
+UWAGI
+-----
+- Nie usuwać od razu — najpierw zmigrować frontend, potem wyciąć endpointy.
+- Terminal endpoints (4 szt.) — do osobnej decyzji (usunąć całkowicie lub zostawić).
+- Po migracji routes.py skurczy się z ~480 do ~150 linii.

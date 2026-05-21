@@ -1,0 +1,641 @@
+================================================================================
+  NOC-IT — PLAN MIGRACJI DO NOWEJ STRUKTURY PROJEKTU
+  Wygenerowano: 2026-02-20
+================================================================================
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  CZĘŚĆ 1: DOCELOWA STRUKTURA KATALOGÓW                                     ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+noc-it/
+├─ README.md
+├─ LICENSE
+├─ .gitignore
+├─ .editorconfig
+├─ .env.example
+├─ docker-compose.yml
+├─ Makefile
+│
+├─ .github/
+│  ├─ workflows/
+│  │  ├─ frontend-ci.yml
+│  │  ├─ backend-ci.yml
+│  │  ├─ poller-ci.yml
+│  │  └─ integration-office.yml
+│  ├─ ISSUE_TEMPLATE/
+│  │  ├─ bug.yml
+│  │  └─ feature.yml
+│  └─ PULL_REQUEST_TEMPLATE.md
+│
+├─ .devcontainer/
+│  ├─ devcontainer.json
+│  └─ docker-compose.codespaces.yml
+│
+├─ apps/
+│  ├─ web/                          ◄── Frontend Vue.js
+│  │  ├─ package.json
+│  │  ├─ vite.config.ts
+│  │  ├─ tsconfig.json
+│  │  ├─ tsconfig.node.json
+│  │  ├─ eslint.config.js
+│  │  ├─ vitest.config.js
+│  │  ├─ index.html
+│  │  ├─ public/
+│  │  │  └─ data/
+│  │  │     ├─ accounts.json
+│  │  │     └─ devices.json
+│  │  └─ src/
+│  │     ├─ main.ts                 (obecne: main.js → rename na .ts)
+│  │     ├─ App.vue                 (obecne: views/App.vue)
+│  │     ├─ router/
+│  │     │  └─ index.ts             (obecne: router.js → rename)
+│  │     ├─ stores/
+│  │     │  └─ cmtsTmpfsStore.js
+│  │     ├─ composables/
+│  │     │  ├─ useAutoCheck.js
+│  │     │  ├─ useData.ts
+│  │     │  ├─ useSyncBatch.js
+│  │     │  └─ useTunnelMonitoring.ts
+│  │     ├─ api/                    (obecne: services/)
+│  │     │  ├─ ApiClient.ts
+│  │     │  ├─ CacheService.ts
+│  │     │  ├─ DataService.ts
+│  │     │  ├─ JobService.ts
+│  │     │  ├─ TerminalApi.ts
+│  │     │  └─ TerminalService.ts
+│  │     ├─ views/
+│  │     │  ├─ Home.vue
+│  │     │  ├─ Main.vue
+│  │     │  ├─ Terminal.vue
+│  │     │  ├─ modules/
+│  │     │  │  ├─ CMTS_Swapper.vue
+│  │     │  │  ├─ CMTS_TMPFS.vue
+│  │     │  │  └─ SSHExecutor.vue
+│  │     │  └─ settings/
+│  │     │     ├─ Accounts.vue
+│  │     │     ├─ CacheDebug.vue
+│  │     │     ├─ Devices.vue
+│  │     │     ├─ General.vue
+│  │     │     ├─ Modules.vue
+│  │     │     ├─ Raports.vue
+│  │     │     └─ Tunnel.vue
+│  │     ├─ components/             (obecnie pusty)
+│  │     ├─ types/                  (obecnie pusty)
+│  │     ├─ utils/
+│  │     │  └─ logger.ts
+│  │     └─ styles/
+│  │        └─ settings/
+│  │
+│  └─ desktop/                      ◄── Tauri (opcjonalnie)
+│     ├─ build.rs
+│     ├─ Cargo.toml
+│     ├─ Cargo.lock
+│     ├─ tauri.conf.json
+│     ├─ icons/
+│     ├─ data/
+│     │  └─ terminal_sessions/
+│     └─ src/
+│        ├─ main.rs
+│        ├─ ssh_manager.rs
+│        ├─ terminal_manager.rs
+│        ├─ data/
+│        └─ ssh/
+│
+├─ services/
+│  ├─ api/                          ◄── Backend FastAPI
+│  │  ├─ pyproject.toml             (nowy, zastępuje requirements.txt)
+│  │  ├─ Dockerfile                 (nowy)
+│  │  └─ app/
+│  │     ├─ __init__.py
+│  │     ├─ main.py
+│  │     ├─ schemas.py
+│  │     ├─ core/
+│  │     │  ├─ __init__.py
+│  │     │  ├─ config.py
+│  │     │  └─ logging.py
+│  │     ├─ api/
+│  │     │  └─ v1/
+│  │     │     ├─ router.py         (obecne: api/routes.py)
+│  │     │     ├─ endpoints/        (nowy - wydzielić z routes.py)
+│  │     │     └─ schemas/          (nowy - wydzielić z schemas.py)
+│  │     ├─ services/
+│  │     │  ├─ __init__.py
+│  │     │  └─ script_runner.py
+│  │     ├─ tasks/
+│  │     │  ├─ __init__.py
+│  │     │  ├─ celery_app.py
+│  │     │  └─ tasks.py
+│  │     ├─ ws/
+│  │     │  ├─ __init__.py
+│  │     │  ├─ jobs.py
+│  │     │  └─ terminal.py
+│  │     ├─ db/                     (nowy - przyszłościowy)
+│  │     │  ├─ models/
+│  │     │  └─ migrations/
+│  │     └─ tests/                  (nowy)
+│  │
+│  └─ poller/                       ◄── Skrypty Python (polling/kontrolery)
+│     ├─ pyproject.toml             (nowy)
+│     ├─ Dockerfile                 (nowy)
+│     └─ poller/
+│        ├─ main.py                 (nowy - punkt wejścia)
+│        ├─ scheduler.py            (nowy)
+│        ├─ controllers/
+│        │  ├─ application_controller.py
+│        │  ├─ consoles_controller.py
+│        │  ├─ terminal_controller.py
+│        │  └─ modules/
+│        │     ├─ cmts_tmpfs_controller.py
+│        │     └─ console_controller.py
+│        ├─ settings/
+│        │  ├─ accounts_controller.py
+│        │  ├─ devices_controller.py
+│        │  ├─ modules_controller.py
+│        │  ├─ modules_settings_controller.py
+│        │  ├─ tunnel_controller.py
+│        │  └─ tunnel_runner.py
+│        ├─ terminal/
+│        │  ├─ terminal_server.py
+│        │  ├─ terminal_ws_server.py
+│        │  └─ test_ws_client.py
+│        ├─ shared/
+│        │  ├─ __init__.py
+│        │  └─ script_utils.py
+│        ├─ config.py               (nowy)
+│        ├─ limits.py               (nowy)
+│        ├─ snmp/                    (nowy - przyszłościowy)
+│        ├─ collectors/              (nowy - przyszłościowy)
+│        ├─ storage/                 (nowy - przyszłościowy)
+│        └─ tests/
+│           └─ test_script_utils.py
+│
+├─ packages/
+│  └─ contracts/
+│     ├─ openapi.yaml               (nowy)
+│     └─ types/                     (nowy)
+│
+├─ data/                            ◄── Dane runtime (gitignore'd, bez wersjonowania)
+│  ├─ accounts.json
+│  ├─ accounts.example.json
+│  ├─ active_sessions.json
+│  ├─ devices.json
+│  ├─ devices.example.json
+│  ├─ devices_info.json
+│  ├─ devices_show_version/
+│  ├─ keys/
+│  ├─ modules_settings.json
+│  ├─ sessions.json
+│  ├─ settings.json
+│  ├─ settings.example.json
+│  ├─ snapshots/
+│  ├─ temp/
+│  ├─ terminal_sessions/
+│  ├─ tunnel.json
+│  └─ tunnel_status.json
+│
+├─ deploy/
+│  ├─ nginx/                        (nowy)
+│  ├─ postgres/                     (nowy)
+│  ├─ grafana/                      (nowy)
+│  └─ prometheus/                   (nowy)
+│
+├─ docs/
+│  ├─ architecture/                 (nowy)
+│  ├─ api/                          (nowy)
+│  ├─ snmp/                         (nowy)
+│  ├─ runbooks/                     (nowy)
+│  ├─ CODE_REVIEW.md               (przeniesione z root)
+│  ├─ IMPLEMENTATION_SUMMARY.md    (przeniesione z root)
+│  ├─ TOKIO_MIGRATION.md           (przeniesione z root)
+│  ├─ TOKIO_QUICKSTART.md          (przeniesione z root)
+│  └─ TUNNEL_DIAGNOSTICS.md        (przeniesione z root)
+│
+├─ scripts/
+│  ├─ dev/                          (nowy - skrypty deweloperskie)
+│  ├─ ops/                          (nowy - skrypty operacyjne)
+│  └─ ci/                           (nowy - skrypty CI/CD)
+│
+└─ tests/                           ◄── Testy integracyjne (top-level)
+   ├─ composables/
+   │  └─ useSyncBatch.test.js
+   ├─ scripts/
+   │  └─ test_script_utils.py
+   └─ utils/
+      └─ logger.test.ts
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  CZĘŚĆ 2: SZCZEGÓŁOWY PLAN MIGRACJI — KROK PO KROKU                       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Legenda statusów:
+  [ ] — do zrobienia
+  [~] — w trakcie
+  [✓] — zrobione
+
+================================================================================
+ETAP 0: PRZYGOTOWANIE (bezpieczne, odwracalne)
+================================================================================
+
+[ ] 0.1  Zrobić pełny backup / commit wszystkiego (git add -A && git commit)
+[ ] 0.2  Utworzyć nowy branch: git checkout -b refactor/new-structure
+[ ] 0.3  Zrobić kopię zapasową: zip -r backup_before_migration.zip .
+
+================================================================================
+ETAP 1: TWORZENIE NOWYCH KATALOGÓW (sam szkielet)
+================================================================================
+
+[ ] 1.1  Utworzyć katalogi apps/web/src/
+[ ] 1.2  Utworzyć katalogi apps/web/public/
+[ ] 1.3  Utworzyć katalogi apps/desktop/
+[ ] 1.4  Utworzyć katalogi services/api/app/api/v1/endpoints/
+[ ] 1.5  Utworzyć katalogi services/api/app/api/v1/schemas/
+[ ] 1.6  Utworzyć katalogi services/api/app/db/models/
+[ ] 1.7  Utworzyć katalogi services/api/app/db/migrations/
+[ ] 1.8  Utworzyć katalogi services/api/app/tests/
+[ ] 1.9  Utworzyć katalogi services/poller/poller/controllers/modules/
+[ ] 1.10 Utworzyć katalogi services/poller/poller/settings/
+[ ] 1.11 Utworzyć katalogi services/poller/poller/terminal/
+[ ] 1.12 Utworzyć katalogi services/poller/poller/shared/
+[ ] 1.13 Utworzyć katalogi services/poller/poller/snmp/
+[ ] 1.14 Utworzyć katalogi services/poller/poller/collectors/
+[ ] 1.15 Utworzyć katalogi services/poller/poller/storage/
+[ ] 1.16 Utworzyć katalogi services/poller/poller/tests/
+[ ] 1.17 Utworzyć katalogi packages/contracts/types/
+[ ] 1.18 Utworzyć katalogi deploy/{nginx,postgres,grafana,prometheus}/
+[ ] 1.19 Utworzyć katalogi docs/{architecture,api,snmp,runbooks}/
+[ ] 1.20 Utworzyć katalogi scripts/{dev,ops,ci}/
+[ ] 1.21 Utworzyć katalogi .github/{workflows,ISSUE_TEMPLATE}/
+[ ] 1.22 Utworzyć katalogi .devcontainer/
+[ ] 1.23 Utworzyć katalog data/ (root-level, dane runtime)
+
+================================================================================
+ETAP 2: PRZENOSZENIE FRONTENDU (Vue.js → apps/web/)
+================================================================================
+
+[ ] 2.1  git mv index.html                    → apps/web/index.html
+[ ] 2.2  git mv package.json                  → apps/web/package.json
+[ ] 2.3  git mv package-lock.json             → apps/web/package-lock.json
+[ ] 2.4  git mv vite.config.js                → apps/web/vite.config.ts (+ rename)
+[ ] 2.5  git mv tsconfig.json                 → apps/web/tsconfig.json
+[ ] 2.6  git mv tsconfig.node.json            → apps/web/tsconfig.node.json
+[ ] 2.7  git mv eslint.config.js              → apps/web/eslint.config.js
+[ ] 2.8  git mv vitest.config.js              → apps/web/vitest.config.js
+[ ] 2.9  git mv public/                       → apps/web/public/
+[ ] 2.10 git mv src/main.js                   → apps/web/src/main.ts
+[ ] 2.11 git mv src/router.js                 → apps/web/src/router/index.ts
+[ ] 2.12 git mv src/views/App.vue             → apps/web/src/App.vue
+[ ] 2.13 git mv src/views/Home.vue            → apps/web/src/views/Home.vue
+[ ] 2.14 git mv src/views/Main.vue            → apps/web/src/views/Main.vue
+[ ] 2.15 git mv src/views/Terminal.vue         → apps/web/src/views/Terminal.vue
+[ ] 2.16 git mv src/views/modules/            → apps/web/src/views/modules/
+[ ] 2.17 git mv src/views/settings/           → apps/web/src/views/settings/
+[ ] 2.18 git mv src/composables/              → apps/web/src/composables/
+[ ] 2.19 git mv src/services/                 → apps/web/src/api/
+[ ] 2.20 git mv src/stores/                   → apps/web/src/stores/
+[ ] 2.21 git mv src/styles/                   → apps/web/src/styles/
+[ ] 2.22 git mv src/utils/                    → apps/web/src/utils/
+[ ] 2.23 git mv src/components/               → apps/web/src/components/
+[ ] 2.24 git mv src/types/                    → apps/web/src/types/
+[ ] 2.25 git mv src/favicon.ico               → apps/web/src/favicon.ico
+
+UWAGA: Po przeniesieniu node_modules trzeba przeinstalować:
+[ ] 2.26 cd apps/web && npm install
+
+================================================================================
+ETAP 3: PRZENOSZENIE BACKENDU (FastAPI → services/api/)
+================================================================================
+
+[ ] 3.1  git mv backend/app/__init__.py       → services/api/app/__init__.py
+[ ] 3.2  git mv backend/app/main.py           → services/api/app/main.py
+[ ] 3.3  git mv backend/app/schemas.py        → services/api/app/schemas.py
+[ ] 3.4  git mv backend/app/core/             → services/api/app/core/
+[ ] 3.5  git mv backend/app/api/routes.py     → services/api/app/api/v1/router.py
+[ ] 3.6  git mv backend/app/api/__init__.py   → services/api/app/api/__init__.py
+[ ] 3.7  git mv backend/app/services/         → services/api/app/services/
+[ ] 3.8  git mv backend/app/tasks/            → services/api/app/tasks/
+[ ] 3.9  git mv backend/app/ws/               → services/api/app/ws/
+[ ] 3.10 Utworzyć services/api/pyproject.toml na bazie backend/requirements.txt
+[ ] 3.11 Utworzyć services/api/Dockerfile
+
+================================================================================
+ETAP 4: PRZENOSZENIE SKRYPTÓW PYTHON (→ services/poller/)
+================================================================================
+
+[ ] 4.1  git mv src/scripts/application_controller.py → services/poller/poller/controllers/
+[ ] 4.2  git mv src/scripts/consoles_controller.py    → services/poller/poller/controllers/
+[ ] 4.3  git mv src/scripts/terminal_controller.py    → services/poller/poller/controllers/
+[ ] 4.4  git mv src/scripts/modules/                  → services/poller/poller/controllers/modules/
+[ ] 4.5  git mv src/scripts/settings/                 → services/poller/poller/settings/
+[ ] 4.6  git mv src/scripts/shared/                   → services/poller/poller/shared/
+[ ] 4.7  git mv src/scripts/terminal_server.py        → services/poller/poller/terminal/
+[ ] 4.8  git mv src/scripts/terminal_ws_server.py     → services/poller/poller/terminal/
+[ ] 4.9  git mv src/scripts/test_ws_client.py         → services/poller/poller/terminal/
+[ ] 4.10 Utworzyć services/poller/pyproject.toml
+[ ] 4.11 Utworzyć services/poller/Dockerfile
+[ ] 4.12 Utworzyć services/poller/poller/main.py (punkt wejścia)
+[ ] 4.13 Utworzyć services/poller/poller/config.py
+[ ] 4.14 Utworzyć services/poller/poller/limits.py
+
+================================================================================
+ETAP 5: PRZENOSZENIE TAURI (→ apps/desktop/)
+================================================================================
+
+[ ] 5.1  git mv src-tauri/build.rs            → apps/desktop/build.rs
+[ ] 5.2  git mv src-tauri/Cargo.toml          → apps/desktop/Cargo.toml
+[ ] 5.3  git mv src-tauri/Cargo.lock          → apps/desktop/Cargo.lock
+[ ] 5.4  git mv src-tauri/tauri.conf.json     → apps/desktop/tauri.conf.json
+[ ] 5.5  git mv src-tauri/icons/              → apps/desktop/icons/
+[ ] 5.6  git mv src-tauri/src/                → apps/desktop/src/
+[ ] 5.7  git mv src-tauri/data/               → apps/desktop/data/
+[ ] 5.8  Zaktualizować tauri.conf.json — ścieżki do frontendu (distDir, devPath)
+[ ] 5.9  Zaktualizować Cargo.toml — ewentualne ścieżki
+
+================================================================================
+ETAP 6: PRZENOSZENIE DANYCH RUNTIME (→ data/)
+================================================================================
+
+[ ] 6.1  git mv src/data/accounts.json          → data/accounts.json
+[ ] 6.2  git mv src/data/accounts.example.json  → data/accounts.example.json
+[ ] 6.3  git mv src/data/active_sessions.json   → data/active_sessions.json
+[ ] 6.4  git mv src/data/devices.json           → data/devices.json
+[ ] 6.5  git mv src/data/devices.example.json   → data/devices.example.json
+[ ] 6.6  git mv src/data/devices_info.json      → data/devices_info.json
+[ ] 6.7  git mv src/data/devices_show_version/  → data/devices_show_version/
+[ ] 6.8  git mv src/data/keys/                  → data/keys/
+[ ] 6.9  git mv src/data/modules_settings.json  → data/modules_settings.json
+[ ] 6.10 git mv src/data/sessions.json          → data/sessions.json
+[ ] 6.11 git mv src/data/settings.json          → data/settings.json
+[ ] 6.12 git mv src/data/settings.example.json  → data/settings.example.json
+[ ] 6.13 git mv src/data/snapshots/             → data/snapshots/
+[ ] 6.14 git mv src/data/temp/                  → data/temp/
+[ ] 6.15 git mv src/data/terminal_sessions/     → data/terminal_sessions/
+[ ] 6.16 git mv src/data/tunnel.json            → data/tunnel.json
+[ ] 6.17 git mv src/data/tunnel_status.json     → data/tunnel_status.json
+
+================================================================================
+ETAP 7: PRZENOSZENIE DOKUMENTACJI (→ docs/)
+================================================================================
+
+[ ] 7.1  git mv CODE_REVIEW.md                → docs/CODE_REVIEW.md
+[ ] 7.2  git mv IMPLEMENTATION_SUMMARY.md     → docs/IMPLEMENTATION_SUMMARY.md
+[ ] 7.3  git mv TOKIO_MIGRATION.md            → docs/TOKIO_MIGRATION.md
+[ ] 7.4  git mv TOKIO_QUICKSTART.md           → docs/TOKIO_QUICKSTART.md
+[ ] 7.5  git mv TUNNEL_DIAGNOSTICS.md         → docs/TUNNEL_DIAGNOSTICS.md
+
+================================================================================
+ETAP 8: PRZENOSZENIE TESTÓW
+================================================================================
+
+[ ] 8.1  git mv tests/composables/            → apps/web/tests/composables/
+         LUB zostawić w tests/ na root level (do decyzji)
+[ ] 8.2  git mv tests/scripts/                → services/poller/poller/tests/
+[ ] 8.3  git mv tests/utils/                  → apps/web/tests/utils/
+
+================================================================================
+ETAP 9: TWORZENIE NOWYCH PLIKÓW KONFIGURACYJNYCH
+================================================================================
+
+[ ] 9.1  Utworzyć root docker-compose.yml
+         - service: web (apps/web, node, port 5173)
+         - service: api (services/api, uvicorn, port 8000)
+         - service: poller (services/poller)
+         - service: postgres (deploy/postgres)
+         - service: redis (dla Celery)
+
+[ ] 9.2  Utworzyć Makefile z targetami:
+         - make dev       (uruchom wszystko lokalnie)
+         - make web       (uruchom frontend)
+         - make api       (uruchom backend)
+         - make poller    (uruchom poller)
+         - make test      (uruchom wszystkie testy)
+         - make lint      (lintowanie)
+         - make build     (build produkcyjny)
+         - make clean     (czyszczenie)
+
+[ ] 9.3  Utworzyć .editorconfig
+
+[ ] 9.4  Utworzyć .github/workflows/frontend-ci.yml
+[ ] 9.5  Utworzyć .github/workflows/backend-ci.yml
+[ ] 9.6  Utworzyć .github/workflows/poller-ci.yml
+[ ] 9.7  Utworzyć .github/ISSUE_TEMPLATE/bug.yml
+[ ] 9.8  Utworzyć .github/ISSUE_TEMPLATE/feature.yml
+[ ] 9.9  Utworzyć .github/PULL_REQUEST_TEMPLATE.md
+
+[ ] 9.10 Utworzyć .devcontainer/devcontainer.json
+[ ] 9.11 Utworzyć .devcontainer/docker-compose.codespaces.yml
+
+[ ] 9.12 Utworzyć packages/contracts/openapi.yaml (szkielet)
+
+[ ] 9.13 Utworzyć services/api/Dockerfile
+[ ] 9.14 Utworzyć services/poller/Dockerfile
+
+================================================================================
+ETAP 10: AKTUALIZACJA IMPORTÓW I ŚCIEŻEK
+================================================================================
+
+To jest NAJWAŻNIEJSZY i NAJTRUDNIEJSZY etap. Wymaga przejrzenia każdego pliku.
+
+--- Frontend (apps/web/src/) ---
+
+[ ] 10.1 Zaktualizować apps/web/src/main.ts
+         - import App z './App.vue' (nie z './views/App.vue')
+         - import router z './router' (nie z './router.js')
+
+[ ] 10.2 Zaktualizować apps/web/src/router/index.ts
+         - Ścieżki do views: '../views/...'
+
+[ ] 10.3 Zaktualizować apps/web/src/App.vue
+         - Ścieżki do komponentów
+
+[ ] 10.4 Zaktualizować wszystkie pliki w views/
+         - Importy composables: '../composables/...'
+         - Importy api/services: '../api/...'
+         - Importy stores: '../stores/...'
+         - Importy utils: '../utils/...'
+
+[ ] 10.5 Zaktualizować composables/
+         - Importy do api/services
+         - Ścieżki do danych (jeśli odwołują się do src/data/)
+
+[ ] 10.6 Zaktualizować api/ (dawne services/)
+         - Wewnętrzne importy między serwisami
+
+[ ] 10.7 Zaktualizować vite.config.ts
+         - resolve.alias (@ → apps/web/src)
+         - ścieżki build output
+
+[ ] 10.8 Zaktualizować tsconfig.json
+         - paths, include, exclude
+         - baseUrl
+
+--- Backend (services/api/) ---
+
+[ ] 10.9  Zaktualizować services/api/app/main.py
+          - Importy modułów (app.api.v1.router zamiast app.api.routes)
+
+[ ] 10.10 Zaktualizować services/api/app/api/v1/router.py
+          - Importy schemas, services
+
+[ ] 10.11 Zaktualizować services/api/app/core/config.py
+          - Ścieżki do plików konfiguracyjnych/danych
+
+--- Poller (services/poller/) ---
+
+[ ] 10.12 Zaktualizować wszystkie kontrolery
+          - Importy shared/script_utils
+          - Ścieżki do plików danych (data/)
+
+[ ] 10.13 Zaktualizować terminal_server.py / terminal_ws_server.py
+          - Ścieżki do sesji terminalowych
+
+--- Tauri (apps/desktop/) ---
+
+[ ] 10.14 Zaktualizować tauri.conf.json
+          - distDir: "../../apps/web/dist" lub odpowiedni
+          - devPath: odpowiedni URL dev servera
+
+[ ] 10.15 Zaktualizować Cargo.toml
+          - Ewentualne ścieżki do zależności
+
+================================================================================
+ETAP 11: AKTUALIZACJA .gitignore
+================================================================================
+
+[ ] 11.1 Zaktualizować .gitignore:
+         - node_modules/ (apps/web/node_modules/)
+         - apps/web/dist/
+         - services/api/app/__pycache__/
+         - services/poller/poller/__pycache__/
+         - .venv/
+         - data/*.json (wrażliwe dane runtime)
+         - !data/*.example.json
+         - apps/desktop/target/
+         - *.pyc
+         - .env.local
+
+================================================================================
+ETAP 12: USUNIĘCIE STARYCH KATALOGÓW
+================================================================================
+
+[ ] 12.1 Usunąć puste src/ (po przeniesieniu wszystkiego)
+[ ] 12.2 Usunąć puste backend/ (po przeniesieniu)
+[ ] 12.3 Usunąć puste src-tauri/ (po przeniesieniu)
+[ ] 12.4 Usunąć zbędne pliki z root:
+         - python_logs.txt
+         - wynik.txt
+         - test_command.json
+         - nocit.zip
+         - src.zip
+         - wersja14022026.zip
+         - "Muzyka — skrót .lnk"
+[ ] 12.5 Usunąć target/ z root (artifact Rust-a, nie powinno być w repo)
+
+================================================================================
+ETAP 13: WERYFIKACJA I TESTY
+================================================================================
+
+[ ] 13.1 cd apps/web && npm install && npm run dev
+         → Sprawdzić czy frontend się uruchamia
+[ ] 13.2 cd apps/web && npm run build
+         → Sprawdzić czy build przechodzi
+[ ] 13.3 cd services/api && pip install -e . && uvicorn app.main:app
+         → Sprawdzić czy backend odpowiada
+[ ] 13.4 Uruchomić testy: npm test, pytest
+[ ] 13.5 Sprawdzić Tauri: cd apps/desktop && cargo build
+[ ] 13.6 Sprawdzić lintera: npm run lint
+[ ] 13.7 Przejrzeć wszystkie importy na błędy compilation
+
+================================================================================
+ETAP 14: FINALIZACJA
+================================================================================
+
+[ ] 14.1 Zaktualizować README.md z nową strukturą projektu
+[ ] 14.2 git add -A && git commit -m "refactor: migrate to monorepo structure"
+[ ] 14.3 Przetestować na czystym klonie
+[ ] 14.4 Merge do main po weryfikacji
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  CZĘŚĆ 3: MAPOWANIE PLIKÓW (STARA ŚCIEŻKA → NOWA ŚCIEŻKA)                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+STARA ŚCIEŻKA                              | NOWA ŚCIEŻKA
+--------------------------------------------|--------------------------------------------
+index.html                                  | apps/web/index.html
+package.json                                | apps/web/package.json
+package-lock.json                           | apps/web/package-lock.json
+vite.config.js                              | apps/web/vite.config.ts
+tsconfig.json                               | apps/web/tsconfig.json
+tsconfig.node.json                          | apps/web/tsconfig.node.json
+eslint.config.js                            | apps/web/eslint.config.js
+vitest.config.js                            | apps/web/vitest.config.js
+public/                                     | apps/web/public/
+src/main.js                                 | apps/web/src/main.ts
+src/router.js                               | apps/web/src/router/index.ts
+src/favicon.ico                             | apps/web/src/favicon.ico
+src/views/App.vue                           | apps/web/src/App.vue
+src/views/Home.vue                          | apps/web/src/views/Home.vue
+src/views/Main.vue                          | apps/web/src/views/Main.vue
+src/views/Terminal.vue                      | apps/web/src/views/Terminal.vue
+src/views/modules/*                         | apps/web/src/views/modules/*
+src/views/settings/*                        | apps/web/src/views/settings/*
+src/composables/*                           | apps/web/src/composables/*
+src/services/*                              | apps/web/src/api/*
+src/stores/*                                | apps/web/src/stores/*
+src/styles/*                                | apps/web/src/styles/*
+src/utils/*                                 | apps/web/src/utils/*
+src/components/*                            | apps/web/src/components/*
+src/types/*                                 | apps/web/src/types/*
+src/data/*                                  | data/*
+backend/app/*                               | services/api/app/*
+backend/app/api/routes.py                   | services/api/app/api/v1/router.py
+backend/requirements.txt                    | services/api/pyproject.toml (konwersja)
+src/scripts/application_controller.py       | services/poller/poller/controllers/
+src/scripts/consoles_controller.py          | services/poller/poller/controllers/
+src/scripts/terminal_controller.py          | services/poller/poller/controllers/
+src/scripts/modules/*                       | services/poller/poller/controllers/modules/*
+src/scripts/settings/*                      | services/poller/poller/settings/*
+src/scripts/shared/*                        | services/poller/poller/shared/*
+src/scripts/terminal_server.py              | services/poller/poller/terminal/
+src/scripts/terminal_ws_server.py           | services/poller/poller/terminal/
+src/scripts/test_ws_client.py               | services/poller/poller/terminal/
+src-tauri/*                                 | apps/desktop/*
+CODE_REVIEW.md                              | docs/CODE_REVIEW.md
+IMPLEMENTATION_SUMMARY.md                   | docs/IMPLEMENTATION_SUMMARY.md
+TOKIO_MIGRATION.md                          | docs/TOKIO_MIGRATION.md
+TOKIO_QUICKSTART.md                         | docs/TOKIO_QUICKSTART.md
+TUNNEL_DIAGNOSTICS.md                       | docs/TUNNEL_DIAGNOSTICS.md
+README.md                                   | README.md (zostaje, aktualizacja)
+.gitignore                                  | .gitignore (zostaje, aktualizacja)
+.env.example                                | .env.example (zostaje)
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  CZĘŚĆ 4: DECYZJE DO PODJĘCIA PRZED MIGRACJĄ                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+1. TAURI: Czy przenosić do apps/desktop/ czy usunąć?
+   → Sugestia: przenieść do apps/desktop/
+
+2. DANE (src/data/): Root data/ czy apps/web/src/data/?
+   → Sugestia: root data/ — współdzielone między frontend i backend
+
+3. GIT MV vs COPY: Użyć git mv (zachowuje historię) czy zwykłe przenoszenie?
+   → Sugestia: git mv
+
+4. TESTY: Zostawić w root tests/ czy przenieść do odpowiednich serwisów?
+   → Sugestia: testy jednostkowe do serwisów, integracyjne w root tests/
+
+5. PLIKI DO USUNIĘCIA: Co z plikami tymczasowymi na root?
+   - python_logs.txt, wynik.txt, test_command.json
+   - nocit.zip, src.zip, wersja14022026.zip
+   - "Muzyka — skrót .lnk"
+   → Sugestia: usunąć wszystkie
+
+6. RENAME .js → .ts: Czy przy okazji przerobić main.js/router.js na TypeScript?
+   → Sugestia: tak, ale tylko zmienić rozszerzenie; pełna migracja TS osobno
+
+================================================================================
+  KONIEC PLANU MIGRACJI
+================================================================================

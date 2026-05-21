@@ -1,0 +1,15 @@
+[project]
+name = "nocit-backend"
+version = "0.0.1"
+description = "FastAPI backend for noc-it"
+requires-python = ">=3.11"
+
+# Minimal dependency specification for reproducible builds
+dependencies = [
+  "fastapi==0.115.6",
+  "uvicorn[standard]==0.30.6",
+  "celery==5.4.0",
+  "redis==5.0.8",
+  "pydantic==2.9.2",
+  "paramiko==3.4.0"
+]

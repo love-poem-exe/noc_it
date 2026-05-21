@@ -1,0 +1,9 @@
+{
+  "cmtsTmpfs": {
+    "hoursBack": 2
+  },
+  "general": {
+    "autoRefresh": true,
+    "debugMode": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "useDefineForClassFields": true,
+      "module": "ESNext",
+      "moduleResolution": "bundler",
+      "strict": true,
+      "jsx": "preserve",
+      "sourceMap": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "allowJs": true,
+      "types": ["vite/client"],
+      "baseUrl": "./",
+      "paths": {
+        "@services/*": ["src/services/*"],
+        "@utils/*": ["src/utils/*"],
+        "@types/*": ["src/types/*"]
+      }
+    },
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+  }
